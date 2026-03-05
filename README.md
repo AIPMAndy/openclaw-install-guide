@@ -1,128 +1,105 @@
-# OpenClaw 安装教程（含 AICodeMirror 配置）
+[English](README_EN.md) | **简体中文**
 
-> 本项目为 OpenClaw 的中文安装与配置教程整理版，覆盖 `MacOS/Linux` 与 `Windows`。
+<div align="center">
 
-## 邀请注册链接
+# OpenClaw 安装教程
 
-- AICodeMirror 邀请链接：
+**10 分钟完成 OpenClaw 安装 + AICodeMirror(Claude/GPT/Gemini) 接入**
+
+[![Stars](https://img.shields.io/github/stars/AIPMAndy/openclaw-install-guide?style=social)](https://github.com/AIPMAndy/openclaw-install-guide/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Platforms](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue)](#)
+
+</div>
+
+## 邀请链接
+
+- AICodeMirror 注册邀请链接：
   https://www.aicodemirror.com/register?invitecode=EZUWFL
 
-## 原始教程来源
+## 这份教程解决什么问题
 
-- MacOS/Linux 教程：
-  https://furbox.yuque.com/org-wiki-furbox-spmbkw/oishf7/lpqfodgg3qwhxbsa
-- Windows 教程：
-  https://furbox.yuque.com/org-wiki-furbox-spmbkw/oishf7/lzsgqkrtgit6eo17
+| 对比项 | 官方文档 | 这份教程 |
+|---|---|---|
+| 系统覆盖 | 分散 | `MacOS/Linux + Windows` 一次讲清 |
+| 初始化流程 | 描述较抽象 | 给出推荐选项和避坑 |
+| 模型接入 | 需要自行整理 | 直接给可复制的 `models` 配置 |
+| 验证步骤 | 需要自行摸索 | 提供最短验证命令路径 |
 
-## 官方地址
+## 30 秒快速开始
 
-- 官网：https://openclaw.ai/
-- 项目地址：https://github.com/openclaw/openclaw
-
-## 一、MacOS/Linux 安装
-
-1. 执行安装脚本：
+### MacOS/Linux
 
 ```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
-```
-
-2. 执行初始化：
-
-```bash
 openclaw onboard --install-daemon
 ```
 
-3. 初始化过程建议：
-- 风险提示选择 `yes`
-- 安装模式选择 `快速安装`
-- 模型配置先 `跳过`
-- Provider 筛选可先选 `Google`
-- 对话机器人先 `跳过`
-- skills 包选择 `yes`
-- skills 安装方式选 `pnpm`
-- skills 的模型 key 配置可先都选 `No`
-
-## 二、Windows 安装
-
-1. 创建安装目录并在 PowerShell 执行：
+### Windows (PowerShell)
 
 ```powershell
 iwr -useb https://openclaw.ai/install.ps1 | iex
-```
-
-2. 执行初始化：
-
-```powershell
 openclaw onboard
 ```
 
-3. 初始化过程建议同上（风险提示 `yes`、快速安装、模型先跳过、skills 选 `pnpm`）。
+## 目录
 
-## 三、配置 AICodeMirror Provider
+- [官方地址](#官方地址)
+- [安装步骤](#安装步骤)
+- [初始化推荐选项](#初始化推荐选项)
+- [配置 AICodeMirror Provider](#配置-aicodemirror-provider)
+- [重启并验证](#重启并验证)
+- [Telegram 机器人接入可选](#telegram-机器人接入可选)
+- [常见问题](#常见问题)
+- [原始教程来源](#原始教程来源)
 
-将以下 `models` 配置写入 `openclaw.json`：
+## 官方地址
+
+- OpenClaw 官网：https://openclaw.ai/
+- OpenClaw 项目：https://github.com/openclaw/openclaw
+
+## 安装步骤
+
+### MacOS/Linux
+
+```bash
+curl -fsSL https://openclaw.ai/install.sh | bash
+openclaw onboard --install-daemon
+```
+
+### Windows
+
+```powershell
+iwr -useb https://openclaw.ai/install.ps1 | iex
+openclaw onboard
+```
+
+## 初始化推荐选项
+
+执行 `openclaw onboard` 期间，建议按下列方式选择：
+
+- 风险提示：`yes`
+- 安装模式：`快速安装`
+- 模型配置：先 `跳过`
+- Provider 筛选：可先选 `Google`
+- 机器人配置：先 `跳过`
+- skills 包：`yes`
+- skills 安装方式：`pnpm`
+- skills 的模型 key：先全部 `No`
+
+## 配置 AICodeMirror Provider
+
+把 `config/openclaw.models.json` 的内容合并到你的 `openclaw.json` 里 `models.providers` 节点。
 
 - MacOS/Linux 路径：`~/.openclaw/openclaw.json`
 - Windows 路径：`C:\Users\你的用户名\.openclaw\openclaw.json`
+- 配置文件模板：[`config/openclaw.models.json`](config/openclaw.models.json)
 
-> 请把下面所有 `apiKey` 的 `换成你的key` 改成你自己的真实 Key。
+> 请把配置中的 `换成你的key` 改成你自己的真实 API Key。
 
-```json
-{
-  "models": {
-    "providers": {
-      "aicodemirror-claude": {
-        "baseUrl": "https://api.aicodemirror.com/api/claudecode",
-        "apiKey": "换成你的key",
-        "api": "anthropic-messages",
-        "models": [
-          {
-            "id": "claude-sonnet-4-5-20250929",
-            "name": "Claude Sonnet 4.5"
-          },
-          {
-            "id": "claude-opus-4-5-20251101",
-            "name": "Claude Opus 4.5"
-          }
-        ]
-      },
-      "aicodemirror-gpt": {
-        "baseUrl": "https://api.aicodemirror.com/api/codex/backend-api/codex",
-        "apiKey": "换成你的key",
-        "api": "openai-responses",
-        "models": [
-          {
-            "id": "gpt-5.2",
-            "name": "GPT-5.2"
-          },
-          {
-            "id": "gpt-5.2-codex",
-            "name": "GPT-5.2 Codex"
-          }
-        ]
-      },
-      "aicodemirror-gemini": {
-        "baseUrl": "https://api.aicodemirror.com/api/gemini/v1",
-        "apiKey": "换成你的key",
-        "api": "openai-completions",
-        "models": [
-          {
-            "id": "gemini-3-pro-preview",
-            "name": "Gemini 3 Pro Preview"
-          },
-          {
-            "id": "gemini-3-flash-preview",
-            "name": "Gemini 3 Flash Preview"
-          }
-        ]
-      }
-    }
-  }
-}
-```
+## 重启并验证
 
-## 四、重启网关并验证
+### 重启网关
 
 - MacOS/Linux：
 
@@ -136,7 +113,7 @@ openclaw gateway restart
 openclaw gateway
 ```
 
-在网关网页 `chat` 中依次执行：
+### 在网关聊天页验证
 
 ```text
 /models
@@ -145,12 +122,12 @@ openclaw gateway
 你好
 ```
 
-如模型正常回复，即配置成功。
+如果模型能正常回复，即配置成功。
 
-## 五、Telegram 对话（可选）
+## Telegram 机器人接入（可选）
 
-1. 在 Telegram 里找 `BotFather`，执行 `/newbot` 获取 Bot Token。
-2. 在本地网关页面 `Config -> Channels -> Telegram Bot Token` 填入 Token。
+1. 在 Telegram 找 `BotFather`，执行 `/newbot` 获取 Bot Token。
+2. 打开本地网关 `Config -> Channels -> Telegram Bot Token`，填入 Token。
 3. 配置本地代理（示例：`http://127.0.0.1:7890`）。
 4. 获取 Pairing code 后执行：
 
@@ -158,10 +135,35 @@ openclaw gateway
 openclaw pairing approve telegram 你的配对code
 ```
 
-5. 回到 Telegram 与机器人对话，测试是否成功。
+5. 回到 Telegram 对话机器人，验证联通性。
+
+## 常见问题
+
+### 1. `/models` 看不到 AICodeMirror provider
+
+- 检查 `openclaw.json` 结构是否正确（尤其是 `models.providers` 层级）。
+- 检查 `apiKey` 是否已替换。
+- 检查是否重启网关。
+
+### 2. 能看到 provider 但模型调用失败
+
+- 检查网络代理配置。
+- 检查 provider 的 `api` 字段是否与模板一致。
+- 检查模型 id 是否拼写正确。
+
+### 3. Windows 下命令执行后没有效果
+
+- 确认在 `PowerShell` 中执行，而不是 CMD。
+- 尝试使用管理员权限重新执行。
+
+## 原始教程来源
+
+- MacOS/Linux：
+  https://furbox.yuque.com/org-wiki-furbox-spmbkw/oishf7/lpqfodgg3qwhxbsa
+- Windows：
+  https://furbox.yuque.com/org-wiki-furbox-spmbkw/oishf7/lzsgqkrtgit6eo17
 
 ---
 
-如果你还没有 AICodeMirror 账号，可通过下方邀请链接注册：
-
-https://www.aicodemirror.com/register?invitecode=EZUWFL
+如果这份教程对你有帮助，欢迎点个 Star：
+https://github.com/AIPMAndy/openclaw-install-guide

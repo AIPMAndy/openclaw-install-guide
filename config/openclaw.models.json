@@ -1,0 +1,51 @@
+{
+  "models": {
+    "providers": {
+      "aicodemirror-claude": {
+        "baseUrl": "https://api.aicodemirror.com/api/claudecode",
+        "apiKey": "换成你的key",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "claude-sonnet-4-5-20250929",
+            "name": "Claude Sonnet 4.5"
+          },
+          {
+            "id": "claude-opus-4-5-20251101",
+            "name": "Claude Opus 4.5"
+          }
+        ]
+      },
+      "aicodemirror-gpt": {
+        "baseUrl": "https://api.aicodemirror.com/api/codex/backend-api/codex",
+        "apiKey": "换成你的key",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "gpt-5.2",
+            "name": "GPT-5.2"
+          },
+          {
+            "id": "gpt-5.2-codex",
+            "name": "GPT-5.2 Codex"
+          }
+        ]
+      },
+      "aicodemirror-gemini": {
+        "baseUrl": "https://api.aicodemirror.com/api/gemini/v1",
+        "apiKey": "换成你的key",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "gemini-3-pro-preview",
+            "name": "Gemini 3 Pro Preview"
+          },
+          {
+            "id": "gemini-3-flash-preview",
+            "name": "Gemini 3 Flash Preview"
+          }
+        ]
+      }
+    }
+  }
+}
