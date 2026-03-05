@@ -49,6 +49,7 @@ openclaw onboard
 - [Official Links](#official-links)
 - [Install Steps](#install-steps)
 - [Recommended Onboarding Options](#recommended-onboarding-options)
+- [Why Use a Relay Here](#why-use-a-relay-here)
 - [Configure AICodeMirror Providers](#configure-aicodemirror-providers)
 - [Restart and Verify](#restart-and-verify)
 - [Telegram Bot Integration (Optional)](#telegram-bot-integration-optional)
@@ -89,6 +90,35 @@ During `openclaw onboard`, use these choices:
 - Built-in skills: `yes`
 - Skills installer: `pnpm`
 - Skills API keys: `No` for now
+
+## Why Use a Relay Here
+
+In this guide, AICodeMirror is used as a model API relay/proxy layer, not as the model itself.
+
+Why this is practical:
+
+- Availability: in some networks/regions, direct vendor endpoints can be unstable.
+- Unified integration: one pattern for `Claude/GPT/Gemini` reduces integration overhead.
+- Faster switching: you can switch provider/model without reworking the whole setup.
+- Operational simplicity: centralized gateway and key management are easier to debug.
+
+Tradeoffs you should understand:
+
+- Trust boundary: requests pass through a third-party relay, so privacy/log policy matters.
+- Cost model: relay services may add markup or apply their own rate limits.
+- Dependency risk: relay downtime affects your workflow.
+
+When you may skip a relay:
+
+- Direct vendor APIs are stable in your environment and you do not need unified multi-model routing.
+- Your org requires strict direct-vendor compliance only.
+
+Minimum relay selection checklist:
+
+- Clear logging policy (whether logs are stored, retention period, deletion path).
+- Key rotation and least-privilege support.
+- Observability (error codes, request diagnostics, rate-limit visibility).
+- Fallback plan (quick switch to direct API or backup relay).
 
 ## Configure AICodeMirror Providers
 
