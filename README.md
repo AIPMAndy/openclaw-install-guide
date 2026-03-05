@@ -10,6 +10,8 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Platforms](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue)](#)
 
+<img src="assets/demo.gif" alt="OpenClaw 安装与模型配置演示" width="920" />
+
 </div>
 
 ## 邀请链接
@@ -50,6 +52,7 @@ openclaw onboard
 - [配置 AICodeMirror Provider](#配置-aicodemirror-provider)
 - [重启并验证](#重启并验证)
 - [Telegram 机器人接入可选](#telegram-机器人接入可选)
+- [发布文案包](#发布文案包)
 - [常见问题](#常见问题)
 - [原始教程来源](#原始教程来源)
 
@@ -136,6 +139,12 @@ openclaw pairing approve telegram 你的配对code
 ```
 
 5. 回到 Telegram 对话机器人，验证联通性。
+
+## 发布文案包
+
+- 已提供可直接使用的中英文推广文案：
+  [`docs/launch-copy.md`](docs/launch-copy.md)
+- 覆盖平台：`X`、`Reddit`、`Hacker News`
 
 ## 常见问题
 

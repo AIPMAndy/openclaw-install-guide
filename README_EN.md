@@ -1,4 +1,4 @@
-[**English**](README_EN.md) | [简体中文](README.md)
+**English** | [简体中文](README.md)
 
 <div align="center">
 
@@ -9,6 +9,8 @@
 [![Stars](https://img.shields.io/github/stars/AIPMAndy/openclaw-install-guide?style=social)](https://github.com/AIPMAndy/openclaw-install-guide/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Platforms](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue)](#)
+
+<img src="assets/demo.gif" alt="OpenClaw install and model setup demo" width="920" />
 
 </div>
 
@@ -50,6 +52,7 @@ openclaw onboard
 - [Configure AICodeMirror Providers](#configure-aicodemirror-providers)
 - [Restart and Verify](#restart-and-verify)
 - [Telegram Bot Integration (Optional)](#telegram-bot-integration-optional)
+- [Launch Copy Pack](#launch-copy-pack)
 - [FAQ](#faq)
 - [Source Tutorials](#source-tutorials)
 
@@ -136,6 +139,12 @@ openclaw pairing approve telegram YOUR_PAIRING_CODE
 ```
 
 5. Chat with your bot in Telegram to confirm it works.
+
+## Launch Copy Pack
+
+- Ready-to-post Chinese/English launch copy:
+  [`docs/launch-copy.md`](docs/launch-copy.md)
+- Channels included: `X`, `Reddit`, `Hacker News`
 
 ## FAQ
 
