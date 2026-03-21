@@ -7,7 +7,7 @@
 **Install OpenClaw and connect AICodeMirror (Claude/GPT/Gemini) in 10 minutes**
 
 [![Stars](https://img.shields.io/github/stars/AIPMAndy/openclaw-install-guide?style=social)](https://github.com/AIPMAndy/openclaw-install-guide/stargazers)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache_2.0-green)](LICENSE)
 [![Platforms](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue)](#)
 
 <img src="assets/demo.gif" alt="OpenClaw install and model setup demo" width="920" />
