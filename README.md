@@ -7,7 +7,7 @@
 **10 分钟完成 OpenClaw 安装 + AICodeMirror(Claude/GPT/Gemini) 接入**
 
 [![Stars](https://img.shields.io/github/stars/AIPMAndy/openclaw-install-guide?style=social)](https://github.com/AIPMAndy/openclaw-install-guide/stargazers)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache_2.0-green)](LICENSE)
 [![Platforms](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue)](#)
 
 <img src="assets/demo.gif" alt="OpenClaw 安装与模型配置演示" width="920" />
