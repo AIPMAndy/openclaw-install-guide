@@ -4,7 +4,7 @@
 
 # OpenClaw 安装教程
 
-**10 分钟完成 OpenClaw 安装 + AICodeMirror(Claude/GPT/Gemini) 接入**
+**10 分钟完成 OpenClaw 安装 + PipeLLM(Claude/GPT/Gemini) 接入**
 
 [![Stars](https://img.shields.io/github/stars/AIPMAndy/openclaw-install-guide?style=social)](https://github.com/AIPMAndy/openclaw-install-guide/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-green)](LICENSE)
@@ -16,8 +16,9 @@
 
 ## 邀请链接
 
-- AICodeMirror 注册邀请链接：
-  https://www.aicodemirror.com/register?invitecode=EZUWFL
+- PipeLLM 注册邀请链接：
+  https://code.pipellm.ai/login?ref=t40e1qql
+- 使用文档：https://code.pipellm.ai/dashboard
 
 ## 这份教程解决什么问题
 
@@ -50,7 +51,7 @@ openclaw onboard
 - [安装步骤](#安装步骤)
 - [初始化推荐选项](#初始化推荐选项)
 - [为什么这里用中转站](#为什么这里用中转站)
-- [配置 AICodeMirror Provider](#配置-aicodemirror-provider)
+- [配置 PipeLLM Provider](#配置-pipellm-provider)
 - [重启并验证](#重启并验证)
 - [Telegram 机器人接入可选](#telegram-机器人接入可选)
 - [发布文案包](#发布文案包)
@@ -93,7 +94,7 @@ openclaw onboard
 
 ## 为什么这里用中转站
 
-本教程里的 AICodeMirror，本质上是一个模型 API 中转层（relay/proxy），不是模型本体。
+本教程里的 PipeLLM，本质上是一个模型 API 中转层（relay/proxy），不是模型本体。
 
 使用中转站的核心原因：
 
@@ -120,13 +121,13 @@ openclaw onboard
 - 是否有可观察性（错误码、调用日志、限流提示）。
 - 是否有回退方案（可快速切回直连或备用中转）。
 
-## 配置 AICodeMirror Provider
+## 配置 PipeLLM Provider
 
-把 `config/openclaw.models.json` 的内容合并到你的 `openclaw.json` 里 `models.providers` 节点。
+把 `config/pipellm.models.json` 的内容合并到你的 `openclaw.json` 里 `models.providers` 节点。
 
 - MacOS/Linux 路径：`~/.openclaw/openclaw.json`
 - Windows 路径：`C:\Users\你的用户名\.openclaw\openclaw.json`
-- 配置文件模板：[`config/openclaw.models.json`](config/openclaw.models.json)
+- 配置文件模板：[`config/pipellm.models.json`](config/pipellm.models.json)
 
 > 请把配置中的 `换成你的key` 改成你自己的真实 API Key。
 
@@ -150,8 +151,8 @@ openclaw gateway
 
 ```text
 /models
-/models aicodemirror-claude
-/model aicodemirror-claude/claude-opus-4-5-20251101
+/models pipellm-claude
+/model pipellm-claude/claude-opus-4-5-20251101
 你好
 ```
 
@@ -178,7 +179,7 @@ openclaw pairing approve telegram 你的配对code
 
 ## 常见问题
 
-### 1. `/models` 看不到 AICodeMirror provider
+### 1. `/models` 看不到 PipeLLM provider
 
 - 检查 `openclaw.json` 结构是否正确（尤其是 `models.providers` 层级）。
 - 检查 `apiKey` 是否已替换。

@@ -7,7 +7,7 @@ Thanks for improving this guide.
 This repository focuses on:
 
 - OpenClaw installation
-- AICodeMirror provider configuration
+- PipeLLM provider configuration
 - Verification and troubleshooting flow
 
 ## How to contribute

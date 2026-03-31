@@ -4,7 +4,7 @@
 
 # OpenClaw Installation Guide
 
-**Install OpenClaw and connect AICodeMirror (Claude/GPT/Gemini) in 10 minutes**
+**Install OpenClaw and connect PipeLLM (Claude/GPT/Gemini) in 10 minutes**
 
 [![Stars](https://img.shields.io/github/stars/AIPMAndy/openclaw-install-guide?style=social)](https://github.com/AIPMAndy/openclaw-install-guide/stargazers)
 [![License](https://img.shields.io/badge/license-Apache_2.0-green)](LICENSE)
@@ -16,8 +16,8 @@
 
 ## Invite Link
 
-- AICodeMirror invite link:
-  https://www.aicodemirror.com/register?invitecode=EZUWFL
+- PipeLLM invite link:
+  https://code.pipellm.ai/login?ref=t40e1qql
 
 ## Why This Guide
 
@@ -50,7 +50,7 @@ openclaw onboard
 - [Install Steps](#install-steps)
 - [Recommended Onboarding Options](#recommended-onboarding-options)
 - [Why Use a Relay Here](#why-use-a-relay-here)
-- [Configure AICodeMirror Providers](#configure-aicodemirror-providers)
+- [Configure PipeLLM Providers](#configure-pipellm-providers)
 - [Restart and Verify](#restart-and-verify)
 - [Telegram Bot Integration (Optional)](#telegram-bot-integration-optional)
 - [Launch Copy Pack](#launch-copy-pack)
@@ -93,7 +93,7 @@ During `openclaw onboard`, use these choices:
 
 ## Why Use a Relay Here
 
-In this guide, AICodeMirror is used as a model API relay/proxy layer, not as the model itself.
+In this guide, PipeLLM is used as a model API relay/proxy layer, not as the model itself.
 
 Why this is practical:
 
@@ -120,13 +120,13 @@ Minimum relay selection checklist:
 - Observability (error codes, request diagnostics, rate-limit visibility).
 - Fallback plan (quick switch to direct API or backup relay).
 
-## Configure AICodeMirror Providers
+## Configure PipeLLM Providers
 
-Merge `config/openclaw.models.json` into your local `openclaw.json` under `models.providers`.
+Merge `config/pipellm.models.json` into your local `openclaw.json` under `models.providers`.
 
 - MacOS/Linux path: `~/.openclaw/openclaw.json`
 - Windows path: `C:\Users\YOUR_USERNAME\.openclaw\openclaw.json`
-- Template file: [`config/openclaw.models.json`](config/openclaw.models.json)
+- Template file: [`config/pipellm.models.json`](config/pipellm.models.json)
 
 > Replace every `换成你的key` with your real API key.
 
@@ -150,8 +150,8 @@ openclaw gateway
 
 ```text
 /models
-/models aicodemirror-claude
-/model aicodemirror-claude/claude-opus-4-5-20251101
+/models pipellm-claude
+/model pipellm-claude/claude-opus-4-5-20251101
 hello
 ```
 
@@ -178,7 +178,7 @@ openclaw pairing approve telegram YOUR_PAIRING_CODE
 
 ## FAQ
 
-### 1. `/models` does not show AICodeMirror providers
+### 1. `/models` does not show PipeLLM providers
 
 - Check your `openclaw.json` structure (`models.providers` path).
 - Check whether API keys are replaced.

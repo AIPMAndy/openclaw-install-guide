@@ -10,7 +10,7 @@
 这份指南包含：
 - 一键安装命令
 - onboard 推荐选项（避坑）
-- AICodeMirror 的 Claude/GPT/Gemini provider 配置模板
+- PipeLLM 的 Claude/GPT/Gemini provider 配置模板
 - 最短验证路径（/models -> /model）
 
 项目地址：
@@ -28,7 +28,7 @@ https://github.com/AIPMAndy/openclaw-install-guide
 It includes:
 - copy-paste install commands
 - recommended onboard choices
-- ready model config template for AICodeMirror (Claude/GPT/Gemini)
+- ready model config template for PipeLLM (Claude/GPT/Gemini)
 - shortest validation path (/models -> /model)
 
 Repo:
@@ -43,7 +43,7 @@ If it saves you time, a Star is appreciated ⭐
 ### Title (r/LocalLLaMA or r/AI_Agents)
 
 ```
-OpenClaw install guide (macOS/Linux/Windows) with ready AICodeMirror model config
+OpenClaw install guide (macOS/Linux/Windows) with ready PipeLLM model config
 ```
 
 ### Post body
@@ -54,7 +54,7 @@ I made a practical setup guide for OpenClaw focused on speed and reproducibility
 What is included:
 1) install commands for macOS/Linux/Windows
 2) recommended onboarding options
-3) copy-ready provider template for AICodeMirror (Claude/GPT/Gemini)
+3) copy-ready provider template for PipeLLM (Claude/GPT/Gemini)
 4) quick validation commands in chat
 
 Repo:
@@ -68,7 +68,7 @@ Feedback is welcome. If there is a missing edge case on your OS, I can add it qu
 ### Title
 
 ```
-Show HN: OpenClaw Installation Guide with AICodeMirror model setup
+Show HN: OpenClaw Installation Guide with PipeLLM model setup
 ```
 
 ### Body
@@ -79,7 +79,7 @@ I put together a concise OpenClaw guide for macOS/Linux/Windows that goes from i
 Focus:
 - deterministic install steps
 - recommended onboarding decisions
-- ready provider template for Claude/GPT/Gemini via AICodeMirror
+- ready provider template for Claude/GPT/Gemini via PipeLLM
 
 GitHub:
 https://github.com/AIPMAndy/openclaw-install-guide
